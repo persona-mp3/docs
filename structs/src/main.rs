@@ -6,6 +6,30 @@ struct User {
     username: String,
     email: String,
     active: bool,
+    task: Task,
+}
+
+#[derive(Debug)]
+/// You can implement methods/functions on an Enum
+enum Task {
+    Async,
+    Ticker,
+}
+
+impl Task {
+    fn write(&self) {
+        println!("testing out enums -> {self:?}",);
+    }
+
+    fn run_async(&self) {
+        println!("running async function");
+    }
+}
+
+impl User {
+    fn send_notification(&self) {
+        println!("sending out notification to email -> {}", self.username);
+    }
 }
 
 fn main() {
@@ -17,6 +41,14 @@ fn main() {
     let mut u = new_user(uname, email);
     change_to(&mut u, tgt_name);
     println!("userdata -> {u:?}");
+
+    u.send_notification();
+    u.task.write();
+
+    match u.task {
+        Task::Async => println!(),
+        Task::Ticker => u.task.run_async(),
+    }
 }
 
 fn collect_target() -> String {
@@ -42,5 +74,6 @@ fn new_user(uname: String, email: String) -> User {
         active: true,
         email: email,
         username: uname,
+        task: Task::Async,
     };
 }
