@@ -45,10 +45,6 @@ fn main() {
     u.send_notification();
     u.task.write();
 
-    match u.task {
-        Task::Async => println!(),
-        Task::Ticker => u.task.run_async(),
-    }
 }
 
 fn collect_target() -> String {
