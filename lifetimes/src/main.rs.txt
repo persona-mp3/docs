@@ -1,0 +1,41 @@
+fn main() {
+    let string1 = String::from("Petrolleum Jelly");
+    let string2 = "Cattrick Glen";
+
+    let result = longest(string1.as_str(), string2);
+    println!("The Longest String is: {}", result);
+}
+
+fn longest<'a>(s1: &'a str, s2: &'a str) -> &'a str {
+    if s1.len() > s2.len() { s1 } else { s2 }
+}
+
+// Returning references only works for string-slices but not
+// 1. String
+// 2. Vec<T>
+// 3. numbers
+// One thing is that, retuning references from a function must have a lifetime,
+// but at the same time, you cannot return references to locally variable from a function.
+fn largest<'a>(s1: &str, s2: &str) -> &'a str {
+    let s = "maggo funk";
+    &s
+}
+
+//
+// use lifetimes::{Execute, TaskType, Task};
+//
+// fn main() {
+//     let new_task = Task {
+//         name: "PrintUsernameFunc".to_string(),
+//         task_type: TaskType::IO,
+//         function: print_username,
+//     };
+//
+//     new_task.execute();
+// }
+//
+// fn print_username() -> String {
+//     let uname = String::from("og_muscleman");
+//     let msg = String::from("do you know who else snores in their sleep?");
+//     format!("{} sent a new message: {}", uname, msg)
+// }
