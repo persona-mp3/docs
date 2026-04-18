@@ -1,0 +1,1 @@
+/home/daniel/dev/learnings/multithreading/threads/target/debug/multithreading: /home/daniel/dev/learnings/multithreading/threads/src/channels.rs /home/daniel/dev/learnings/multithreading/threads/src/main.rs /home/daniel/dev/learnings/multithreading/threads/src/threads.rs
