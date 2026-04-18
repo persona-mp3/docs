@@ -1,0 +1,25 @@
+syntax = "proto3";
+package tutorial;
+
+option go_package = "tuts/protocols/data;data";
+
+message Person {
+  string name = 1;
+  int32 id = 2;
+  string email = 3;
+
+  message Phone {
+    string contact = 1;
+    PhoneType type = 2;
+  }
+}
+
+enum PhoneType {
+  UNSPEC = 0;
+  MOIBLE = 1;
+  HOME = 2;
+}
+
+message AddressBook {
+  repeated Person people= 1;
+}
