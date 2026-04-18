@@ -1,0 +1,31 @@
+// fn main() {
+//     let some_num = Some(100);
+//     let some_string = Some("Caravan, Whiplash");
+//     println!("could_be_num -> {:?}", some_num);
+//     println!("could_be_string -> {:?}", some_string);
+//
+//     let mut point_y: Option<i32> = Some(99);
+//     point_y = None;
+//     let uuid: i32 = 8;
+//     // when you get tired of this, try this
+//     // https://doc.rust-lang.org/book/ch06-03-if-let.html
+//     match point_y {
+//         Some(v) => {
+//             println!("value found -> {v}");
+//             println!("sum -> {}", v + uuid);
+//         }
+//         // _ => ()
+//         None => {
+//             eprintln!("value is None -> {:?}", point_y)
+//         }
+//     }
+//
+//     if point_y.is_some() {
+//         println!("unwrappig__: {}", point_y.unwrap());
+//     } else {
+//         println!(
+//             "if you unwrapped a none_value, you go bang -> {:?}",
+//             point_y
+//         )
+//     }
+// }
