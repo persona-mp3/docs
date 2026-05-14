@@ -22,8 +22,8 @@ pub fn main() {
         }
     });
 
-    // // The sender sends a close_signal, although not specified by the book my attempt there
-    // // was to cause a panic
+    // The sender sends a close_signal, although not specified by the book my attempt there
+    // was to cause a panic
     // loop {
     //     let recvd = in_ch.recv().expect("Could not read from [1]");
     //     println!("[0] recvd [1]:: {:?}", recvd);
@@ -90,7 +90,6 @@ pub fn multiple_threads() -> Result<Receiver<Message>, Box<dyn std::error::Error
         for msg in msgs {
             thread::sleep(std::time::Duration::from_millis(3));
             send_clone.send(msg).unwrap()
-                
         }
     });
 
@@ -106,9 +105,7 @@ pub fn multiple_threads() -> Result<Receiver<Message>, Box<dyn std::error::Error
             },
             Message {
                 src: String::from("3"),
-                content: String::from(
-                    "Jolly good show, I say good show lad",
-                ),
+                content: String::from("Jolly good show, I say good show lad"),
             },
         ];
 
